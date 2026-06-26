@@ -1,15 +1,13 @@
 {
   "arguments": {
-    "keys": [
-      "cmd",
-      "c"
-    ],
-    "pid": 32196,
-    "session": "s10-calc-1782488734"
+    "key": "=",
+    "pid": 84204,
+    "session": "s10-calc-1782491632",
+    "window_id": 7743
   },
-  "result_summary": "Pressed cmd+c on pid 32196.",
-  "t_ms_from_session_start": 23045,
-  "t_start_ms_from_session_start": 22003,
-  "timestamp": "1782488758.079",
-  "tool": "hotkey"
+  "result_summary": "✅ Pressed = on pid 84204.",
+  "t_ms_from_session_start": 22195,
+  "t_start_ms_from_session_start": 21167,
+  "timestamp": "1782491654.556",
+  "tool": "press_key"
 }

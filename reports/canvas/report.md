@@ -4,12 +4,12 @@
 
 - **Goal:** Click the center of the red circle.
 - **App:** Google Chrome
-- **Session:** `s10-canvas-1782488803`
+- **Session:** `s10-canvas-1782491700`
 
 ## 2. Cascade path
 
 - **Layer used:** `vision`
-- **Vision calls:** 1  |  **LLM calls:** 1
+- **Vision calls:** 2  |  **LLM calls:** 2
 
 ## 3. Why this layer
 
@@ -20,10 +20,11 @@ The target is canvas/pixels with no actionable AX node, so the cascade escalates
 | turn | action(s) | outcome |
 |---|---|---|
 | 1 | click(7) | clicked mark 7 @(452,588); The red circle is the target. The yellow bo |
+| 2 | click(7) | clicked mark 7 @(452,588); The red circle is the target. The yellow bo |
 
 ## 5. Screenshot (last recorded turn)
 
-![last turn](../../trajectories/canvas/turn-00002/screenshot.png)
+![last turn](../../trajectories/canvas/turn-00003/screenshot.png)
 
 ## 6. Verification
 
@@ -34,10 +35,10 @@ The target is canvas/pixels with no actionable AX node, so the cascade escalates
 
 | provider | calls | in_tok | out_tok | ok | est $ |
 |---|---|---|---|---|---|
-| groq | 1 | 2687 | 37 | 1/1 | $0.00043 |
+| groq | 2 | 5374 | 82 | 2/2 | $0.00087 |
 
 ## 8. Trajectory evidence
 
-- **Turns recorded:** 2
+- **Turns recorded:** 3
 - **Trajectory dir:** `trajectories/canvas/` (per-turn `action.json` + `screenshot.png` + `app_state.json`)
 - Replay with: `cua-driver call replay_trajectory '{"trajectory_dir":"/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/canvas"}'`

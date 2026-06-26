@@ -1,0 +1,15 @@
+{
+  "arguments": {
+    "keys": [
+      "cmd",
+      "c"
+    ],
+    "pid": 84204,
+    "session": "s10-calc-1782491632"
+  },
+  "result_summary": "Pressed cmd+c on pid 84204.",
+  "t_ms_from_session_start": 24300,
+  "t_start_ms_from_session_start": 23229,
+  "timestamp": "1782491656.661",
+  "tool": "hotkey"
+}

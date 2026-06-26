@@ -5,7 +5,7 @@
   "turns": 8,
   "success": true,
   "result_text": "223",
-  "final_state": "8 keystrokes dispatched; result read from clipboard (Layer-1 extract): '223'",
+  "final_state": "8 keystrokes dispatched; result read from clipboard (Layer-1 extract): '223'; expected '223'",
   "actions": [
     {
       "turn": 1,
@@ -106,7 +106,7 @@
   "trajectory_dir": "/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/calc",
   "vision_calls": 0,
   "llm_calls": 1,
-  "session": "s10-calc-1782488734",
+  "session": "s10-calc-1782491632",
   "label": "Calculator \u2014 Layer 2a deterministic (zero vision)",
   "cost": {
     "computer": [
@@ -115,12 +115,12 @@
         "provider": "cerebras",
         "calls": 1,
         "in_tok": 378,
-        "out_tok": 179,
-        "total_latency_ms": 1923,
+        "out_tok": 157,
+        "total_latency_ms": 496,
         "total_retries": 0,
         "ok": 1,
         "errors": 0,
-        "dollars": 0.000278
+        "dollars": 0.000267
       }
     ]
   }

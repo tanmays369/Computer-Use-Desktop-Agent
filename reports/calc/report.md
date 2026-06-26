@@ -4,7 +4,7 @@
 
 - **Goal:** Compute 12 multiplied by 18, then add 7, using the keys.
 - **App:** Calculator
-- **Session:** `s10-calc-1782488734`
+- **Session:** `s10-calc-1782491632`
 
 ## 2. Cascade path
 
@@ -31,7 +31,7 @@ Goal maps to a fixed, known input sequence; an LLM plans it ONCE, then the loop 
 
 ## 5. Screenshot (last recorded turn)
 
-![last turn](../../trajectories/calc/turn-00010/screenshot.png)
+![last turn](../../trajectories/calc/turn-00011/screenshot.png)
 
 ## 6. Verification
 
@@ -42,10 +42,10 @@ Goal maps to a fixed, known input sequence; an LLM plans it ONCE, then the loop 
 
 | provider | calls | in_tok | out_tok | ok | est $ |
 |---|---|---|---|---|---|
-| cerebras | 1 | 378 | 179 | 1/1 | $0.00028 |
+| cerebras | 1 | 378 | 157 | 1/1 | $0.00027 |
 
 ## 8. Trajectory evidence
 
-- **Turns recorded:** 10
+- **Turns recorded:** 11
 - **Trajectory dir:** `trajectories/calc/` (per-turn `action.json` + `screenshot.png` + `app_state.json`)
 - Replay with: `cua-driver call replay_trajectory '{"trajectory_dir":"/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/calc"}'`

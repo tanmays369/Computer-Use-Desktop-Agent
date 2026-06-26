@@ -2,7 +2,7 @@
   "goal": "Click the center of the red circle.",
   "app": "Google Chrome",
   "path": "vision",
-  "turns": 1,
+  "turns": 2,
   "success": true,
   "result_text": "",
   "final_state": "post-condition met after clicking mark 7 (set-of-marks on 1509x1568 screenshot)",
@@ -18,28 +18,40 @@
         }
       ],
       "outcome": "clicked mark 7 @(452,588); The red circle is the target. The yellow box with the number"
+    },
+    {
+      "turn": 2,
+      "actions": [
+        {
+          "type": "click",
+          "mark": 7,
+          "x": 452,
+          "y": 588
+        }
+      ],
+      "outcome": "clicked mark 7 @(452,588); The red circle is the target. The yellow box with the number"
     }
   ],
   "error_code": null,
   "error": null,
   "trajectory_dir": "/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/canvas",
-  "vision_calls": 1,
-  "llm_calls": 1,
-  "session": "s10-canvas-1782488803",
+  "vision_calls": 2,
+  "llm_calls": 2,
+  "session": "s10-canvas-1782491700",
   "label": "Canvas target \u2014 Layer 3 vision / set-of-marks",
   "cost": {
     "computer": [
       {
         "agent": "computer",
         "provider": "groq",
-        "calls": 1,
-        "in_tok": 2687,
-        "out_tok": 37,
-        "total_latency_ms": 1101,
+        "calls": 2,
+        "in_tok": 5374,
+        "out_tok": 82,
+        "total_latency_ms": 1716,
         "total_retries": 0,
-        "ok": 1,
+        "ok": 2,
         "errors": 0,
-        "dollars": 0.000431
+        "dollars": 0.000868
       }
     ]
   }

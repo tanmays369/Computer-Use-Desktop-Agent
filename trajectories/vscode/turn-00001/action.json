@@ -10,14 +10,14 @@
     "bundle_id": "com.microsoft.VSCode",
     "creates_new_application_instance": true,
     "electron_debugging_port": 9223,
-    "session": "s10-vscode-1782488760",
+    "session": "s10-vscode-1782491659",
     "urls": [
       "/tmp/s10_ws"
     ]
   },
-  "result_summary": "Launched ? (pid 32928) in background.\nCDP renderer available on port 9223.",
-  "t_ms_from_session_start": 7885,
-  "t_start_ms_from_session_start": 52,
-  "timestamp": "1782488768.500",
+  "result_summary": "Launched ? (pid 85054) in background.\nCDP renderer available on port 9223.",
+  "t_ms_from_session_start": 5641,
+  "t_start_ms_from_session_start": 28,
+  "timestamp": "1782491664.899",
   "tool": "launch_app"
 }

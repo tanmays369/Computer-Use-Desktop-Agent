@@ -46,6 +46,7 @@ class ComputerTask:
     max_turns: int = 12
     a11y_query: str | None = None       # pre-filter the AX markdown (§10 knob)
     verify_title_contains: str | None = None  # cheap post-condition via window title
+    verify_equals: str | None = None    # exact result the run must produce (e.g. "223")
     trajectory_dir: str | None = None
     artifacts_dir: str | None = None
     extra: dict = field(default_factory=dict)
@@ -181,6 +182,18 @@ class ComputerSkill:
                              "planner produced no keystroke sequence",
                              path="deterministic")
 
+        # Focus + reset before dispatch. Layer-2a keystrokes only land if the
+        # target window is frontmost; without this the first digits can be
+        # dropped (focus still settling) and the leftover state corrupts the
+        # result. Activate, then press Escape (Calculator's All-Clear) so the
+        # run always starts from a known 0. (Fixed a wrong-result regression.)
+        self.driver.activate(task.app_name, settle=0.6)
+        try:
+            self.driver.press_key(pid, "escape", window_id=window_id)
+        except DriverError:
+            pass
+        time.sleep(0.2)
+
         actions: list[dict] = []
         for i, k in enumerate(keys, start=1):
             mapped = self._map_key(k)
@@ -189,7 +202,7 @@ class ComputerSkill:
                                   window_id=window_id)
             actions.append({"turn": i, "actions": [{"type": "press_key",
                             "key": mapped["key"]}], "outcome": "ok"})
-            time.sleep(0.12)
+            time.sleep(0.18)
 
         # verify (§7) via Layer-1 clipboard extract: copy the result with
         # Cmd+C and read it back. macOS Calculator exposes no result element
@@ -204,14 +217,27 @@ class ComputerSkill:
         actions.append({"turn": len(keys) + 1,
                         "actions": [{"type": "hotkey", "keys": ["cmd", "c"]}],
                         "outcome": "copied result to clipboard"})
+        # Success means the post-condition holds: when the task declares the
+        # expected answer, compare it (digits only, so "4,021" vs "223" can't
+        # both pass); otherwise fall back to "produced a numeric result".
+        if task.verify_equals is not None:
+            norm = lambda s: "".join(ch for ch in (s or "") if ch.isdigit() or ch in ".-")
+            success = norm(result_text) == norm(task.verify_equals)
+        else:
+            success = bool(result_text)
         return ComputerOutput(
             goal=task.goal, app=task.app_name, path="deterministic",
-            turns=len(keys), success=bool(result_text),
+            turns=len(keys), success=success,
             result_text=result_text,
             final_state=f"{len(keys)} keystrokes dispatched; result read "
-                        f"from clipboard (Layer-1 extract): {result_text!r}",
+                        f"from clipboard (Layer-1 extract): {result_text!r}"
+                        + (f"; expected {task.verify_equals!r}"
+                           if task.verify_equals is not None else ""),
             actions=actions, trajectory_dir=task.trajectory_dir,
             vision_calls=0, llm_calls=self.llm_calls,
+            error=None if success else
+            (f"result {result_text!r} != expected {task.verify_equals!r}"
+             if task.verify_equals is not None else None),
         )
 
     @staticmethod

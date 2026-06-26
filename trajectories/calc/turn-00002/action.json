@@ -1,13 +1,13 @@
 {
   "arguments": {
-    "key": "1",
-    "pid": 32196,
-    "session": "s10-calc-1782488734",
-    "window_id": 7428
+    "key": "escape",
+    "pid": 84204,
+    "session": "s10-calc-1782491632",
+    "window_id": 7743
   },
-  "result_summary": "✅ Pressed 1 on pid 32196.",
-  "t_ms_from_session_start": 8684,
-  "t_start_ms_from_session_start": 7635,
-  "timestamp": "1782488743.719",
+  "result_summary": "✅ Pressed escape on pid 84204.",
+  "t_ms_from_session_start": 7916,
+  "t_start_ms_from_session_start": 6856,
+  "timestamp": "1782491640.277",
   "tool": "press_key"
 }

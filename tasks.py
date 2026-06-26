@@ -34,6 +34,7 @@ def task_calculator() -> ComputerTask:
         app_name="Calculator",
         bundle_id="com.apple.calculator",
         force_path="deterministic",
+        verify_equals="223",
         trajectory_dir=str(TRAJ / "calc"),
         artifacts_dir=str(ART / "calc"),
     )

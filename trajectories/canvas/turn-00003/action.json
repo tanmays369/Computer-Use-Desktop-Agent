@@ -11,8 +11,8 @@
     "y": 588.0
   },
   "result_summary": "✅ Posted click to pid 86816.",
-  "t_ms_from_session_start": 15281,
-  "t_start_ms_from_session_start": 12374,
-  "timestamp": "1782491715.813",
+  "t_ms_from_session_start": 20155,
+  "t_start_ms_from_session_start": 18801,
+  "timestamp": "1782491720.687",
   "tool": "click"
 }
