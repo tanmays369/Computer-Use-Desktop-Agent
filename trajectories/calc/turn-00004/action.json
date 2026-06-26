@@ -1,0 +1,16 @@
+{
+  "arguments": {
+    "key": "8",
+    "modifiers": [
+      "shift"
+    ],
+    "pid": 32196,
+    "session": "s10-calc-1782488734",
+    "window_id": 7428
+  },
+  "result_summary": "✅ Pressed 8 on pid 32196.",
+  "t_ms_from_session_start": 12587,
+  "t_start_ms_from_session_start": 11540,
+  "timestamp": "1782488747.621",
+  "tool": "press_key"
+}

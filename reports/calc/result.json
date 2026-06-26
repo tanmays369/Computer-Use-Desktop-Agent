@@ -1,0 +1,127 @@
+{
+  "goal": "Compute 12 multiplied by 18, then add 7, using the keys.",
+  "app": "Calculator",
+  "path": "deterministic",
+  "turns": 8,
+  "success": true,
+  "result_text": "223",
+  "final_state": "8 keystrokes dispatched; result read from clipboard (Layer-1 extract): '223'",
+  "actions": [
+    {
+      "turn": 1,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "1"
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 2,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "2"
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 3,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "8"
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 4,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "1"
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 5,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "8"
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 6,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "plus"
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 7,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "7"
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 8,
+      "actions": [
+        {
+          "type": "press_key",
+          "key": "="
+        }
+      ],
+      "outcome": "ok"
+    },
+    {
+      "turn": 9,
+      "actions": [
+        {
+          "type": "hotkey",
+          "keys": [
+            "cmd",
+            "c"
+          ]
+        }
+      ],
+      "outcome": "copied result to clipboard"
+    }
+  ],
+  "error_code": null,
+  "error": null,
+  "trajectory_dir": "/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/calc",
+  "vision_calls": 0,
+  "llm_calls": 1,
+  "session": "s10-calc-1782488734",
+  "label": "Calculator \u2014 Layer 2a deterministic (zero vision)",
+  "cost": {
+    "computer": [
+      {
+        "agent": "computer",
+        "provider": "cerebras",
+        "calls": 1,
+        "in_tok": 378,
+        "out_tok": 179,
+        "total_latency_ms": 1923,
+        "total_retries": 0,
+        "ok": 1,
+        "errors": 0,
+        "dollars": 0.000278
+      }
+    ]
+  }
+}

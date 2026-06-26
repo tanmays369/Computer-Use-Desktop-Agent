@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>canvas-target</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #f2f2f2; overflow: hidden; }
+  #c { display: block; }
+  #hint { position: fixed; top: 8px; left: 0; right: 0; text-align: center;
+          font: 16px -apple-system, sans-serif; color: #444; }
+</style>
+</head>
+<body>
+<div id="hint">Click the RED circle</div>
+<canvas id="c"></canvas>
+<script>
+// A canvas-rendered target with NO ARIA / DOM shapes: every shape is pixels
+// painted on a single <canvas>, so the accessibility tree exposes nothing
+// actionable. This is the Layer-3 vision case — the agent must SEE the red
+// circle and click it by coordinate. On a correct click the page sets its
+// title to HIT-RED, which the agent verifies cheaply via the window title.
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+let shapes = [];
+
+function layout() {
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  const W = c.width, H = c.height;
+  const r = Math.min(W, H) * 0.16;            // big radius → forgiving target
+  // Four shapes at four quadrant centers.
+  shapes = [
+    {kind: 'circle',   color: '#e23b3b', x: W * 0.27, y: H * 0.34, r: r, name: 'red'},
+    {kind: 'square',   color: '#2f6fe2', x: W * 0.73, y: H * 0.34, r: r, name: 'blue'},
+    {kind: 'triangle', color: '#2faf4f', x: W * 0.27, y: H * 0.70, r: r, name: 'green'},
+    {kind: 'star',     color: '#e2b52f', x: W * 0.73, y: H * 0.70, r: r, name: 'yellow'},
+  ];
+  draw();
+}
+
+function draw(hit) {
+  const W = c.width, H = c.height;
+  ctx.clearRect(0, 0, W, H);
+  for (const s of shapes) {
+    ctx.fillStyle = s.color;
+    ctx.beginPath();
+    if (s.kind === 'circle') {
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    } else if (s.kind === 'square') {
+      ctx.rect(s.x - s.r, s.y - s.r, s.r * 2, s.r * 2);
+    } else if (s.kind === 'triangle') {
+      ctx.moveTo(s.x, s.y - s.r);
+      ctx.lineTo(s.x - s.r, s.y + s.r);
+      ctx.lineTo(s.x + s.r, s.y + s.r);
+      ctx.closePath();
+    } else if (s.kind === 'star') {
+      for (let i = 0; i < 10; i++) {
+        const ang = Math.PI / 5 * i - Math.PI / 2;
+        const rad = i % 2 === 0 ? s.r : s.r * 0.45;
+        const fn = i === 0 ? 'moveTo' : 'lineTo';
+        ctx[fn](s.x + Math.cos(ang) * rad, s.y + Math.sin(ang) * rad);
+      }
+      ctx.closePath();
+    }
+    ctx.fill();
+  }
+  if (hit) {
+    ctx.strokeStyle = '#111';
+    ctx.lineWidth = 8;
+    const s = shapes.find(z => z.name === 'red');
+    ctx.beginPath();
+    ctx.moveTo(s.x - s.r * 0.4, s.y);
+    ctx.lineTo(s.x - s.r * 0.1, s.y + s.r * 0.35);
+    ctx.lineTo(s.x + s.r * 0.45, s.y - s.r * 0.4);
+    ctx.stroke();
+  }
+}
+
+c.addEventListener('click', (e) => {
+  const red = shapes.find(s => s.name === 'red');
+  const d = Math.hypot(e.clientX - red.x, e.clientY - red.y);
+  if (d <= red.r) {
+    document.title = 'HIT-RED';
+    document.getElementById('hint').textContent = '✓ HIT-RED';
+    draw(true);
+  } else {
+    document.title = 'MISS';
+    document.getElementById('hint').textContent = '✗ MISS — try the red circle';
+  }
+});
+
+window.addEventListener('resize', layout);
+layout();
+</script>
+</body>
+</html>

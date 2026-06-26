@@ -1,0 +1,236 @@
+[
+  {
+    "goal": "Compute 12 multiplied by 18, then add 7, using the keys.",
+    "app": "Calculator",
+    "path": "deterministic",
+    "turns": 8,
+    "success": true,
+    "result_text": "223",
+    "final_state": "8 keystrokes dispatched; result read from clipboard (Layer-1 extract): '223'",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "1"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 2,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "2"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 3,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "8"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 4,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "1"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 5,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "8"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 6,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "plus"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 7,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "7"
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 8,
+        "actions": [
+          {
+            "type": "press_key",
+            "key": "="
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 9,
+        "actions": [
+          {
+            "type": "hotkey",
+            "keys": [
+              "cmd",
+              "c"
+            ]
+          }
+        ],
+        "outcome": "copied result to clipboard"
+      }
+    ],
+    "error_code": null,
+    "error": null,
+    "trajectory_dir": "/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/calc",
+    "vision_calls": 0,
+    "llm_calls": 1,
+    "session": "s10-calc-1782488734",
+    "label": "Calculator \u2014 Layer 2a deterministic (zero vision)",
+    "cost": {
+      "computer": [
+        {
+          "agent": "computer",
+          "provider": "cerebras",
+          "calls": 1,
+          "in_tok": 378,
+          "out_tok": 179,
+          "total_latency_ms": 1923,
+          "total_retries": 0,
+          "ok": 1,
+          "errors": 0,
+          "dollars": 0.000278
+        }
+      ]
+    }
+  },
+  {
+    "goal": "In an isolated VS Code window, confirm the workbench loaded, open the Search view from the activity bar, and report which view is active.",
+    "app": "Visual Studio Code",
+    "path": "deterministic",
+    "turns": 4,
+    "success": true,
+    "result_text": "Search (\u21e7\u2318F)",
+    "final_state": "electron page path (cdp-fallback): 4 DOM steps; result='Search (\u21e7\u2318F)'",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "action": "query_dom",
+            "css_selector": ".monaco-workbench"
+          }
+        ],
+        "outcome": "[{\"tag\": \"DIV\", \"text\": \"s10_ws\\nSign In\\nOpen in Agents\\nRestricted Mode is intended for safe code browsing\", \"aria\": n"
+      },
+      {
+        "turn": 2,
+        "actions": [
+          {
+            "action": "execute_javascript",
+            "javascript": "document.title"
+          }
+        ],
+        "outcome": "Welcome \u2014 s10_ws"
+      },
+      {
+        "turn": 3,
+        "actions": [
+          {
+            "type": "click",
+            "selector": ".activitybar .action-item a.action-label[aria-label^='Search']",
+            "x": 24,
+            "y": 133
+          }
+        ],
+        "outcome": "clicked  @(24,133) dpr=1"
+      },
+      {
+        "turn": 4,
+        "actions": [
+          {
+            "action": "execute_javascript",
+            "javascript": "(function(){var e=document.querySelector('.activitybar .action-item.checked a.action-label');return e?e.getAttribute('aria-label'):'none';})()"
+          }
+        ],
+        "outcome": "Search (\u21e7\u2318F)"
+      }
+    ],
+    "error_code": null,
+    "error": null,
+    "trajectory_dir": "/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/vscode",
+    "vision_calls": 0,
+    "llm_calls": 0,
+    "session": "s10-vscode-1782488760",
+    "label": "VS Code \u2014 Electron page path (zero vision)",
+    "cost": {}
+  },
+  {
+    "goal": "Click the center of the red circle.",
+    "app": "Google Chrome",
+    "path": "vision",
+    "turns": 1,
+    "success": true,
+    "result_text": "",
+    "final_state": "post-condition met after clicking mark 7 (set-of-marks on 1509x1568 screenshot)",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 7,
+            "x": 452,
+            "y": 588
+          }
+        ],
+        "outcome": "clicked mark 7 @(452,588); The red circle is the target. The yellow box with the number"
+      }
+    ],
+    "error_code": null,
+    "error": null,
+    "trajectory_dir": "/Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/trajectories/canvas",
+    "vision_calls": 1,
+    "llm_calls": 1,
+    "session": "s10-canvas-1782488803",
+    "label": "Canvas target \u2014 Layer 3 vision / set-of-marks",
+    "cost": {
+      "computer": [
+        {
+          "agent": "computer",
+          "provider": "groq",
+          "calls": 1,
+          "in_tok": 2687,
+          "out_tok": 37,
+          "total_latency_ms": 1101,
+          "total_retries": 0,
+          "ok": 1,
+          "errors": 0,
+          "dollars": 0.000431
+        }
+      ]
+    }
+  }
+]

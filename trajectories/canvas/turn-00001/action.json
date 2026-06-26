@@ -1,0 +1,21 @@
+{
+  "arguments": {
+    "additional_arguments": [
+      "--user-data-dir=/tmp/s10_chrome",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--new-window"
+    ],
+    "bundle_id": "com.google.Chrome",
+    "creates_new_application_instance": true,
+    "session": "s10-canvas-1782488803",
+    "urls": [
+      "file:///Users/tanmsh-blrm24/Downloads/assignment6/S10SharedCode/assets/canvas_target.html"
+    ]
+  },
+  "result_summary": "Launched Google Chrome (pid 34683) in background.",
+  "t_ms_from_session_start": 6556,
+  "t_start_ms_from_session_start": 38,
+  "timestamp": "1782488810.576",
+  "tool": "launch_app"
+}

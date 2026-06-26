@@ -1,0 +1,19 @@
+# Secrets — never commit
+.env
+.env.local
+
+# Virtual environments
+.venv/
+venv/
+
+# Build / cache artifacts
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Keep trajectories/ and reports/ — they are the submission evidence.

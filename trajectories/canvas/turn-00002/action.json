@@ -1,0 +1,18 @@
+{
+  "arguments": {
+    "pid": 34683,
+    "session": "s10-canvas-1782488803",
+    "window_id": 7453,
+    "x": 452,
+    "y": 588
+  },
+  "click_point": {
+    "x": 452.0,
+    "y": 588.0
+  },
+  "result_summary": "✅ Posted click to pid 34683.",
+  "t_ms_from_session_start": 19821,
+  "t_start_ms_from_session_start": 16944,
+  "timestamp": "1782488823.842",
+  "tool": "click"
+}

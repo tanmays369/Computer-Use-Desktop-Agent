@@ -1,0 +1,13 @@
+{
+  "arguments": {
+    "key": "plus",
+    "pid": 32196,
+    "session": "s10-calc-1782488734",
+    "window_id": 7428
+  },
+  "result_summary": "✅ Pressed plus on pid 32196.",
+  "t_ms_from_session_start": 17700,
+  "t_start_ms_from_session_start": 16663,
+  "timestamp": "1782488752.734",
+  "tool": "press_key"
+}

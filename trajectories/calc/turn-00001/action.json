@@ -1,0 +1,11 @@
+{
+  "arguments": {
+    "bundle_id": "com.apple.calculator",
+    "session": "s10-calc-1782488734"
+  },
+  "result_summary": "Launched Calculator (pid 32196) in background.",
+  "t_ms_from_session_start": 3918,
+  "t_start_ms_from_session_start": 42,
+  "timestamp": "1782488738.952",
+  "tool": "launch_app"
+}

@@ -1,0 +1,18 @@
+{
+  "arguments": {
+    "pid": 32928,
+    "session": "s10-vscode-1782488760",
+    "window_id": 7439,
+    "x": 24,
+    "y": 133
+  },
+  "click_point": {
+    "x": 24.0,
+    "y": 133.0
+  },
+  "result_summary": "✅ Posted click to pid 32928.",
+  "t_ms_from_session_start": 31803,
+  "t_start_ms_from_session_start": 29016,
+  "timestamp": "1782488792.418",
+  "tool": "click"
+}

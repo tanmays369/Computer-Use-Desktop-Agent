@@ -1,0 +1,6 @@
+# Computer-Use skill — framework-free deps (no agentic frameworks).
+# cua-driver is the substrate (installed separately as a binary).
+# The V9 gateway from Session 9 must be running on http://localhost:8109.
+httpx>=0.27
+websocket-client>=1.7      # direct-CDP fallback for the Electron page path
+pillow>=10.0              # set-of-marks overlay for Layer-3 vision
